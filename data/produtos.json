@@ -28,14 +28,14 @@
   },
   {
     "id": 4,
-    "nome": "Massacre na Família Hope",
-    "descricao": "Uma leitura intensa, psicológica e envolvente, com um enredo sombrio que prende o leitor do começo ao fim.",
+    "nome": "Massacre da Família Hope",
+    "descricao": "Uma análise intensa e envolvente de um livro que mistura suspense, tensão psicológica e um final marcante, ideal para quem gosta de histórias sombrias e impactantes.",
     "preco": "R$ 59,90",
-    "link_afiliado": "https://link.amazon/B0cSVTftB",
+    "link_afiliado": "https://link.amazon/B00gKS1ZJ",
     "categoria": "livros",
     "avaliacao": "4.8/5",
-    "veredito": "Vale a pena ler",
+    "veredito": "Vale a pena comprar",
     "imagem": "https://m.media-amazon.com/images/I/815bfY-u6-L._SL1500_.jpg",
-    "pontos": ["Narrativa envolvente", "Tensão constante", "Final impactante"]
+    "pontos": ["Narrativa envolvente", "Suspense constante", "Final impactante"]
   }
 ]
