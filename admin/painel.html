@@ -71,17 +71,22 @@
             ? payload.pontos.split(',').map((item) => item.trim()).filter(Boolean)
             : [];
 
-          const response = await fetch('/api/produtos', {
+          const apiUrl = `${window.location.origin}/api/produtos`;
+          const response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ ...payload, pontos })
           });
 
           const result = await response.json();
+          if (!response.ok) {
+            throw new Error(result.message || 'Erro ao salvar produto');
+          }
+
           status.innerHTML = `<p>${result.message}</p>`;
           form.reset();
         } catch (error) {
-          status.innerHTML = `<p>Erro ao salvar: ${error.message}</p>`;
+          status.innerHTML = `<p>Erro ao salvar: ${error.message}. Verifique se o servidor está rodando em ${window.location.origin}.</p>`;
         }
       });
     </script>

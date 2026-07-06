@@ -32,26 +32,30 @@ app.get('/api/produto/:id', (req, res) => {
 });
 
 app.post('/api/produtos', (req, res) => {
-  const produtos = lerProdutos();
-  const novoProduto = {
-    id: produtos.length ? produtos[produtos.length - 1].id + 1 : 1,
-    nome: req.body.nome,
-    descricao: req.body.descricao,
-    preco: req.body.preco,
-    categoria: req.body.categoria,
-    link_afiliado: req.body.link_afiliado,
-    avaliacao: req.body.avaliacao || '4.7/5',
-    veredito: req.body.veredito || 'Vale a pena',
-    imagem: req.body.imagem || '',
-    pontos: Array.isArray(req.body.pontos) && req.body.pontos.length
-      ? req.body.pontos
-      : ['Novo item', 'Em análise']
-  };
+  try {
+    const produtos = lerProdutos();
+    const novoProduto = {
+      id: produtos.length ? produtos[produtos.length - 1].id + 1 : 1,
+      nome: req.body.nome,
+      descricao: req.body.descricao,
+      preco: req.body.preco,
+      categoria: req.body.categoria,
+      link_afiliado: req.body.link_afiliado,
+      avaliacao: req.body.avaliacao || '4.7/5',
+      veredito: req.body.veredito || 'Vale a pena',
+      imagem: req.body.imagem || '',
+      pontos: Array.isArray(req.body.pontos) && req.body.pontos.length
+        ? req.body.pontos
+        : ['Novo item', 'Em análise']
+    };
 
-  produtos.push(novoProduto);
-  salvarProdutos(produtos);
+    produtos.push(novoProduto);
+    salvarProdutos(produtos);
 
-  res.status(201).json({ message: 'Produto salvo com sucesso', produto: novoProduto });
+    res.status(201).json({ message: 'Produto salvo com sucesso', produto: novoProduto });
+  } catch (error) {
+    res.status(500).json({ message: `Erro ao salvar produto: ${error.message}` });
+  }
 });
 
 app.get('/', (req, res) => {
