@@ -10,8 +10,8 @@
     <header class="hero hero-small">
       <div class="container">
         <p class="eyebrow">Categorias</p>
-        <h1>Escolha um tipo de produto</h1>
-        <p>Filtrando automaticamente pelo catálogo.</p>
+        <h1>Escolha um livro</h1>
+        <p>Catálogo focado em recomendações de livros.</p>
       </div>
     </header>
 
@@ -32,9 +32,9 @@
     <script>
       window.addEventListener('DOMContentLoaded', () => {
         const params = new URLSearchParams(window.location.search);
-        const categoria = params.get('cat') || 'all';
+        const categoria = params.get('cat') || 'livros';
         const titulo = document.getElementById('titulo-categoria');
-        titulo.textContent = categoria === 'all' ? 'Todos os produtos' : `Produtos de ${categoria}`;
+        titulo.textContent = categoria === 'all' ? 'Todos os produtos' : `Livros de ${categoria}`;
         renderProdutos(categoria);
       });
     </script>
