@@ -25,5 +25,14 @@
     "link_afiliado": "https://www.amazon.com.br/s?k=notebook+asus+vivobook",
     "categoria": "notebooks",
     "pontos": ["Processador moderno", "SSD rápido", "Tela Full HD"]
+  },
+  {
+    "id": 4,
+    "nome": "Massacre na Família Hope",
+    "descricao": "Uma leitura intensa, psicológica e envolvente, com um enredo sombrio que prende o leitor do começo ao fim.",
+    "preco": "R$ 59,90",
+    "link_afiliado": "https://link.amazon/B0cSVTftB",
+    "categoria": "livros",
+    "pontos": ["Narrativa envolvente", "Tensão constante", "Final impactante"]
   }
 ]
