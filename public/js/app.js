@@ -16,7 +16,7 @@ async function renderProdutos(categoria = 'all') {
 
     container.innerHTML = filtrados.length
       ? filtrados.map((produto) => `
-        <article class="card">
+        <article class="card ${produto.categoria === 'livros' ? 'featured-product' : ''}">
           <p class="eyebrow">${produto.categoria}</p>
           <h3>${produto.nome}</h3>
           <p>${produto.descricao}</p>
@@ -38,9 +38,15 @@ async function renderProduto(id) {
   const categoria = document.getElementById('produto-categoria');
   const pontos = document.getElementById('produto-pontos');
   const link = document.getElementById('produto-link');
-    const avaliacao = document.getElementById('produto-avaliacao');
-    const veredito = document.getElementById('produto-veredito');
-    const imagem = document.getElementById('produto-imagem');
+  const avaliacao = document.getElementById('produto-avaliacao');
+  const veredito = document.getElementById('produto-veredito');
+  const imagem = document.getElementById('produto-imagem');
+  const card = document.querySelector('.product-card');
+
+  if (!titulo || !nome || !descricao || !categoria || !pontos || !link) return;
+
+  try {
+    const produtos = await carregarProdutos();
     const produto = produtos.find((item) => String(item.id) === String(id));
 
     if (!produto) {
@@ -60,6 +66,9 @@ async function renderProduto(id) {
     if (imagem) {
       imagem.src = produto.imagem || '';
       imagem.style.display = produto.imagem ? 'block' : 'none';
+    }
+    if (card) {
+      card.classList.toggle('featured-product-detail', produto.categoria === 'livros');
     }
     link.href = produto.link_afiliado;
     link.textContent = `Ver preço na Amazon — ${produto.preco}`;
