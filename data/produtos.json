@@ -37,5 +37,17 @@
     "veredito": "Vale a pena comprar",
     "imagem": "https://m.media-amazon.com/images/I/815bfY-u6-L._SL1500_.jpg",
     "pontos": ["Narrativa envolvente", "Suspense constante", "Final impactante"]
+  },
+  {
+    "id": 5,
+    "nome": "Nunca Minta",
+    "descricao": "Um thriller psicológico envolvente, com uma trama sinuosa e uma premissa que prende desde o início, perfeita para quem curte mistério e reviravoltas.",
+    "preco": "R$ 49,90",
+    "link_afiliado": "https://link.amazon/B02ngyznx",
+    "categoria": "livros",
+    "avaliacao": "4.6/5",
+    "veredito": "Vale a pena ler",
+    "imagem": "https://images-na.ssl-images-amazon.com/images/P/B0DP1DH4MX.jpg",
+    "pontos": ["Trama viciante", "Mistério constante", "Final surpreendente"]
   }
 ]
