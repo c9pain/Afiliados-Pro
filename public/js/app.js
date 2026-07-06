@@ -20,8 +20,9 @@ async function renderProdutos(categoria = 'all') {
           <p class="eyebrow">${produto.categoria}</p>
           <h3>${produto.nome}</h3>
           <p>${produto.descricao}</p>
+          <p class="text-link">⭐ ${produto.avaliacao || '4.7/5'} • ${produto.veredito || 'Vale a pena'}</p>
           <p><strong>${produto.preco}</strong></p>
-          <a class="btn btn-primary" href="produto.html?id=${produto.id}">Ver análise</a>
+          <a class="btn btn-primary" href="produto.html?id=${produto.id}">Ver avaliação completa</a>
         </article>
       `).join('')
       : '<p>Nenhum produto encontrado para esta categoria.</p>';
@@ -37,8 +38,8 @@ async function renderProduto(id) {
   const categoria = document.getElementById('produto-categoria');
   const pontos = document.getElementById('produto-pontos');
   const link = document.getElementById('produto-link');
-
-  if (!titulo || !nome || !descricao || !categoria || !pontos || !link) return;
+    const avaliacao = document.getElementById('produto-avaliacao');
+    const veredito = document.getElementById('produto-veredito');
 
   try {
     const produtos = await carregarProdutos();
@@ -56,8 +57,10 @@ async function renderProduto(id) {
     descricao.textContent = produto.descricao;
     categoria.textContent = produto.categoria;
     pontos.innerHTML = (produto.pontos || []).map((item) => `<li>✔ ${item}</li>`).join('');
+    if (avaliacao) avaliacao.textContent = `⭐ ${produto.avaliacao || '4.7/5'}`;
+    if (veredito) veredito.textContent = produto.veredito || 'Vale a pena comprar';
     link.href = produto.link_afiliado;
-    link.textContent = `Ver preço na loja — ${produto.preco}`;
+    link.textContent = `Ver preço na Amazon — ${produto.preco}`;
   } catch (error) {
     titulo.textContent = 'Erro ao carregar';
     nome.textContent = 'Não foi possível carregar o produto';
