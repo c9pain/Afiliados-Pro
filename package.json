@@ -1,0 +1,12 @@
+{
+  "name": "afiliados-pro",
+  "version": "1.0.0",
+  "description": "Site profissional de afiliados com frontend dinâmico, backend simples e painel admin",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

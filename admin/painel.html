@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel Admin</title>
+    <link rel="stylesheet" href="../public/css/style.css" />
+  </head>
+  <body>
+    <header class="hero hero-small">
+      <div class="container">
+        <p class="eyebrow">Administração</p>
+        <h1>Painel de cadastro de produtos</h1>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <form id="form-produto" class="panel form-panel">
+          <label>
+            Nome
+            <input type="text" name="nome" required />
+          </label>
+          <label>
+            Descrição
+            <input type="text" name="descricao" required />
+          </label>
+          <label>
+            Preço
+            <input type="text" name="preco" required />
+          </label>
+          <label>
+            Categoria
+            <input type="text" name="categoria" required />
+          </label>
+          <label>
+            Link de afiliado
+            <input type="url" name="link_afiliado" required />
+          </label>
+          <button class="btn btn-primary" type="submit">Salvar produto</button>
+        </form>
+        <div id="status" class="status-box"></div>
+      </section>
+    </main>
+
+    <script>
+      document.getElementById('form-produto').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const payload = Object.fromEntries(new FormData(form).entries());
+        const status = document.getElementById('status');
+
+        try {
+          const response = await fetch('/api/produtos', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          const result = await response.json();
+          status.innerHTML = `<p>${result.message}</p>`;
+          form.reset();
+        } catch (error) {
+          status.innerHTML = `<p>Erro ao salvar: ${error.message}</p>`;
+        }
+      });
+    </script>
+  </body>
+</html>

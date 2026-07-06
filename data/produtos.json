@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "nome": "Smartphone X Pro",
+    "descricao": "Melhor custo-benefício com câmera forte, bateria de longa duração e desempenho sólido.",
+    "preco": "R$ 1.299",
+    "link_afiliado": "https://example.com/afiliado/smartphone-x-pro",
+    "categoria": "celulares",
+    "pontos": ["Boa câmera", "Bateria 5000mAh", "Tela Full HD"]
+  },
+  {
+    "id": 2,
+    "nome": "Fone Bluetooth Elite",
+    "descricao": "Som limpo, conexão rápida e conforto para estudo, trabalho e música.",
+    "preco": "R$ 349",
+    "link_afiliado": "https://example.com/afiliado/fone-elite",
+    "categoria": "audio",
+    "pontos": ["Cancelamento de ruído", "Bateria de 30h", "Conexão estável"]
+  },
+  {
+    "id": 3,
+    "nome": "Notebook Ultra 14",
+    "descricao": "Leve, rápido e ideal para estudo, trabalho remoto e produtividade diária.",
+    "preco": "R$ 2.799",
+    "link_afiliado": "https://example.com/afiliado/notebook-ultra",
+    "categoria": "notebooks",
+    "pontos": ["Processador moderno", "SSD rápido", "Tela Full HD"]
+  }
+]

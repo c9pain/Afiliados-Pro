@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categoria | Guia de Ofertas</title>
+    <link rel="stylesheet" href="../public/css/style.css" />
+  </head>
+  <body>
+    <header class="hero hero-small">
+      <div class="container">
+        <p class="eyebrow">Categorias</p>
+        <h1>Escolha um tipo de produto</h1>
+        <p>Filtrando automaticamente pelo catálogo.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Catálogo</p>
+            <h2 id="titulo-categoria">Todos os produtos</h2>
+          </div>
+          <a class="text-link" href="index.html">Voltar para home</a>
+        </div>
+        <div id="lista-produtos" class="cards-grid"></div>
+      </section>
+    </main>
+
+    <script src="../public/js/app.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const categoria = params.get('cat') || 'all';
+        const titulo = document.getElementById('titulo-categoria');
+        titulo.textContent = categoria === 'all' ? 'Todos os produtos' : `Produtos de ${categoria}`;
+        renderProdutos(categoria);
+      });
+    </script>
+  </body>
+</html>
