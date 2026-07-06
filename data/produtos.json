@@ -6,7 +6,11 @@
     "preco": "R$ 1.299",
     "link_afiliado": "https://www.amazon.com.br/s?k=smartphone+xiaomi+mi+13",
     "categoria": "celulares",
-    "pontos": ["Câmera avançada", "Bateria de longa duração", "Tela Full HD"]
+    "pontos": [
+      "Câmera avançada",
+      "Bateria de longa duração",
+      "Tela Full HD"
+    ]
   },
   {
     "id": 2,
@@ -15,7 +19,11 @@
     "preco": "R$ 349",
     "link_afiliado": "https://www.amazon.com.br/s?k=fone+bluetooth+sem+fio",
     "categoria": "audio",
-    "pontos": ["Cancelamento de ruído", "Bateria de 30h", "Conexão estável"]
+    "pontos": [
+      "Cancelamento de ruído",
+      "Bateria de 30h",
+      "Conexão estável"
+    ]
   },
   {
     "id": 3,
@@ -24,7 +32,11 @@
     "preco": "R$ 2.799",
     "link_afiliado": "https://www.amazon.com.br/s?k=notebook+asus+vivobook",
     "categoria": "notebooks",
-    "pontos": ["Processador moderno", "SSD rápido", "Tela Full HD"]
+    "pontos": [
+      "Processador moderno",
+      "SSD rápido",
+      "Tela Full HD"
+    ]
   },
   {
     "id": 4,
@@ -36,7 +48,11 @@
     "avaliacao": "4.8/5",
     "veredito": "Vale a pena comprar",
     "imagem": "https://m.media-amazon.com/images/I/815bfY-u6-L._SL1500_.jpg",
-    "pontos": ["Narrativa envolvente", "Suspense constante", "Final impactante"]
+    "pontos": [
+      "Narrativa envolvente",
+      "Suspense constante",
+      "Final impactante"
+    ]
   },
   {
     "id": 5,
@@ -48,6 +64,10 @@
     "avaliacao": "4.6/5",
     "veredito": "Vale a pena ler",
     "imagem": "https://images-na.ssl-images-amazon.com/images/P/B0DP1DH4MX.jpg",
-    "pontos": ["Trama viciante", "Mistério constante", "Final surpreendente"]
-  }
+    "pontos": [
+      "Trama viciante",
+      "Mistério constante",
+      "Final surpreendente"
+    ]
+  },
 ]
