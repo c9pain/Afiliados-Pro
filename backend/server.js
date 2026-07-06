@@ -40,7 +40,12 @@ app.post('/api/produtos', (req, res) => {
     preco: req.body.preco,
     categoria: req.body.categoria,
     link_afiliado: req.body.link_afiliado,
-    pontos: ['Novo item', 'Em análise']
+    avaliacao: req.body.avaliacao || '4.7/5',
+    veredito: req.body.veredito || 'Vale a pena',
+    imagem: req.body.imagem || '',
+    pontos: Array.isArray(req.body.pontos) && req.body.pontos.length
+      ? req.body.pontos
+      : ['Novo item', 'Em análise']
   };
 
   produtos.push(novoProduto);

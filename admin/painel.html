@@ -34,6 +34,22 @@
             <input type="text" name="categoria" required />
           </label>
           <label>
+            Avaliação
+            <input type="text" name="avaliacao" placeholder="Ex: 4.8/5" />
+          </label>
+          <label>
+            Veredito
+            <input type="text" name="veredito" placeholder="Ex: Vale a pena comprar" />
+          </label>
+          <label>
+            URL da imagem
+            <input type="url" name="imagem" placeholder="https://..." />
+          </label>
+          <label>
+            Pontos principais
+            <input type="text" name="pontos" placeholder="Ponto 1, Ponto 2, Ponto 3" />
+          </label>
+          <label>
             Link de afiliado
             <input type="url" name="link_afiliado" required />
           </label>
@@ -51,10 +67,14 @@
         const status = document.getElementById('status');
 
         try {
+          const pontos = payload.pontos
+            ? payload.pontos.split(',').map((item) => item.trim()).filter(Boolean)
+            : [];
+
           const response = await fetch('/api/produtos', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+            body: JSON.stringify({ ...payload, pontos })
           });
 
           const result = await response.json();
