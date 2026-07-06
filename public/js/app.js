@@ -40,9 +40,7 @@ async function renderProduto(id) {
   const link = document.getElementById('produto-link');
     const avaliacao = document.getElementById('produto-avaliacao');
     const veredito = document.getElementById('produto-veredito');
-
-  try {
-    const produtos = await carregarProdutos();
+    const imagem = document.getElementById('produto-imagem');
     const produto = produtos.find((item) => String(item.id) === String(id));
 
     if (!produto) {
@@ -59,6 +57,10 @@ async function renderProduto(id) {
     pontos.innerHTML = (produto.pontos || []).map((item) => `<li>✔ ${item}</li>`).join('');
     if (avaliacao) avaliacao.textContent = `⭐ ${produto.avaliacao || '4.7/5'}`;
     if (veredito) veredito.textContent = produto.veredito || 'Vale a pena comprar';
+    if (imagem) {
+      imagem.src = produto.imagem || '';
+      imagem.style.display = produto.imagem ? 'block' : 'none';
+    }
     link.href = produto.link_afiliado;
     link.textContent = `Ver preço na Amazon — ${produto.preco}`;
   } catch (error) {
