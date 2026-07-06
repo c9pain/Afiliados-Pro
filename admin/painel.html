@@ -71,7 +71,10 @@
             ? payload.pontos.split(',').map((item) => item.trim()).filter(Boolean)
             : [];
 
-          const apiUrl = `${window.location.origin}/api/produtos`;
+          const apiUrl = window.location.protocol === 'file:'
+            ? 'http://localhost:3000/api/produtos'
+            : `${window.location.origin}/api/produtos`;
+
           const response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
