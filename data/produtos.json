@@ -2,27 +2,27 @@
   {
     "id": 1,
     "nome": "Smartphone X Pro",
-    "descricao": "Melhor custo-benefício com câmera forte, bateria de longa duração e desempenho sólido.",
+    "descricao": "Excelente custo-benefício para quem busca câmera forte, bateria longa e desempenho confiável para o dia a dia.",
     "preco": "R$ 1.299",
-    "link_afiliado": "https://example.com/afiliado/smartphone-x-pro",
+    "link_afiliado": "https://www.amazon.com.br/s?k=smartphone+xiaomi+mi+13",
     "categoria": "celulares",
-    "pontos": ["Boa câmera", "Bateria 5000mAh", "Tela Full HD"]
+    "pontos": ["Câmera avançada", "Bateria de longa duração", "Tela Full HD"]
   },
   {
     "id": 2,
     "nome": "Fone Bluetooth Elite",
-    "descricao": "Som limpo, conexão rápida e conforto para estudo, trabalho e música.",
+    "descricao": "Som nítido, conexão rápida e conforto para estudar, trabalhar e curtir músicas com mais qualidade.",
     "preco": "R$ 349",
-    "link_afiliado": "https://example.com/afiliado/fone-elite",
+    "link_afiliado": "https://www.amazon.com.br/s?k=fone+bluetooth+sem+fio",
     "categoria": "audio",
     "pontos": ["Cancelamento de ruído", "Bateria de 30h", "Conexão estável"]
   },
   {
     "id": 3,
     "nome": "Notebook Ultra 14",
-    "descricao": "Leve, rápido e ideal para estudo, trabalho remoto e produtividade diária.",
+    "descricao": "Leve, rápido e ideal para estudar, trabalhar remotamente e aumentar a produtividade no dia a dia.",
     "preco": "R$ 2.799",
-    "link_afiliado": "https://example.com/afiliado/notebook-ultra",
+    "link_afiliado": "https://www.amazon.com.br/s?k=notebook+asus+vivobook",
     "categoria": "notebooks",
     "pontos": ["Processador moderno", "SSD rápido", "Tela Full HD"]
   }
